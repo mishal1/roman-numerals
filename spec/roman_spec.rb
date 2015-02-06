@@ -32,4 +32,20 @@ describe RomanNumerals do
     expect(roman.convertArabicToRoman(1000)).to eq 'M'
   end
 
+  it 'says "III" if the number is 3' do
+    expect(roman.convertArabicToRoman(3)).to eq 'III'
+  end
+
+  it 'says "XXX" if the number is 30' do
+    expect(roman.convertArabicToRoman(30)).to eq 'XXX'
+  end
+
+  it 'says "CCC" if the number is 3000' do
+    expect(roman.convertArabicToRoman(300)).to eq 'CCC'
+  end
+
+  it 'says "MMM" if the number is 3000' do
+    expect(roman.convertArabicToRoman(3000)).to eq 'MMM'
+  end
+
 end
