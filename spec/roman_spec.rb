@@ -48,4 +48,12 @@ describe RomanNumerals do
     expect(roman.convertArabicToRoman(3000)).to eq 'MMM'
   end
 
+  it 'says "IV" if the number is 4' do
+    expect(roman.convertArabicToRoman(4)).to eq 'IV'
+  end
+
+  it 'says "IX" if the number is 4' do
+    expect(roman.convertArabicToRoman(9)).to eq 'IX'
+  end
+
 end

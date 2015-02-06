@@ -1,41 +1,35 @@
 class RomanNumerals
 
   def convertArabicToRoman(number)
-    return oneToOneHundred(number) if number < 100
-    return overOneHundred(number) if number >= 100
+    number < 100 ? oneToOneHundred(number) : overOneHundred(number)
   end
 
   def oneToOneHundred(number)
-    return under10s(number) if number < 10
-    return under100s(number) if number < 100
+    number < 10 ? under10s(number) : under100s(number)
   end
 
   def overOneHundred(number)
-    return under1000s(number) if number < 1000
-    return convertToM(number)
+    number < 1000 ? under1000s(number) : convertToM(number)
   end
 
   def under10s(number)
-    return convertToI(number) if number < 5
-    return 'V' if number < 10
+    number < 5 ? convertToI(number) : 'V'
   end
 
   def under100s(number)
-    return convertToX(number) if number < 50 
-    return 'L' if number < 100
+    number < 50 ? convertToX(number) : 'L'
   end
 
   def under1000s(number)
-    return convertToC(number) if number < 500
-    return 'D' if number < 1000
+    number < 500 ? convertToC(number) : 'D'
   end
 
   def convertToI(number)
-    'I' * number
+    number < 4 ? 'I' * number : 'IV'
   end
 
   def convertToX(number)
-   'X' * (number / 10)
+   return 'X' * (number / 10) if number
   end
 
   def convertToC(number)
