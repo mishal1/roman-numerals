@@ -72,4 +72,8 @@ describe RomanNumerals do
     expect(roman.convertArabicToRoman(900)).to eq 'CM'
   end
 
+  # it 'says "XI" if the number is 11' do
+  #   expect(roman.convertArabicToRoman(11)).to eq 'XI'
+  # end
+
 end
