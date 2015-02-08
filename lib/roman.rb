@@ -1,7 +1,13 @@
 class RomanNumerals
 
-  def convertArabicToRoman(number)
-    number < 100 ? oneToOneHundred(number) : overOneHundred(number)
+  def convertArabicToRoman(number, splitNumbers)
+    @romanNumeral = []
+    loopThroughSplitNumbers(number, splitNumbers)
+    @romanNumeral.join
+  end
+
+  def loopThroughSplitNumbers(number, splitNumbers)
+      splitNumbers.convertToArray(number).each {|number| number < 100 ? oneToOneHundred(number) : overOneHundred(number)}
   end
 
   def oneToOneHundred(number)
@@ -25,7 +31,7 @@ class RomanNumerals
   end
 
   def convertToI(number)
-    number < 4 ? 'I' * number : 'IV'
+    number < 4 ? @romanNumeral << 'I' * number : @romanNumeral << 'IV'
   end
 
   def convertToV(number)
@@ -33,23 +39,23 @@ class RomanNumerals
   end
 
   def convertToX(number)
-    number < 40 ? 'X' * (number / 10) : 'XL'
+    number < 40 ? @romanNumeral << 'X' * (number / 10) : @romanNumeral << 'XL'
   end
 
   def convertToL(number)
-    number < 90 ? 'L' : 'XC'
+    number < 90 ? @romanNumeral << 'L' : @romanNumeral << 'XC'
   end
 
   def convertToC(number)
-    number < 400 ? 'C' * (number / 100) : 'CD'
+    number < 400 ? @romanNumeral << 'C' * (number / 100) : @romanNumeral << 'CD'
   end
 
   def convertToD(number)
-    number < 900 ? 'D' : 'CM'
+    number < 900 ? @romanNumeral << 'D' : @romanNumeral << 'CM'
   end
 
   def convertToM(number)
-    'M' * (number / 1000)
+    @romanNumeral << 'M' * (number / 1000)
   end
 
 end
